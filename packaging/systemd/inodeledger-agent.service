@@ -1,0 +1,15 @@
+[Unit]
+Description=InodeLedger reduced-coverage filesystem reconciliation
+
+[Service]
+Type=simple
+# Edit the executable path to your installed virtual environment.
+ExecStart=%h/inodeledger/.venv/bin/inodeledger-agent --interval 10
+Restart=on-failure
+RestartSec=5
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=default.target

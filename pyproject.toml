@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "inodeledger"
+version = "0.1.0"
+description = "Local filesystem metadata history and investigation"
+readme = "README.md"
+authors = [{name = "ItsDarker"}]
+license = {text = "MIT"}
+requires-python = ">=3.12"
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/ItsDarker/inodeledger"
+Issues = "https://github.com/ItsDarker/inodeledger/issues"
+
+[project.scripts]
+inodeledger = "inodeledger.cli:main"
+inodeledger-agent = "inodeledger.agent:main"
+
+[project.gui-scripts]
+inodeledger-desktop = "inodeledger.gui:main"
+
+[tool.setuptools.packages.find]
+include = ["inodeledger*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
